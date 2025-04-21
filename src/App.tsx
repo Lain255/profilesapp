@@ -17,7 +17,7 @@ import outputs from "../amplify_outputs.json";
  */
 
 Amplify.configure(outputs);
-const client = generateClient({
+const client : any = generateClient({
   authMode: "userPool",
 });
 
@@ -56,7 +56,7 @@ export default function App() {
         gap="2rem"
         alignContent="center"
       >
-        {userprofiles.map((userprofile) => (
+        {userprofiles.map((userprofile : any) => (
           <Flex
             key={userprofile.id || userprofile.email}
             direction="column"
@@ -69,7 +69,7 @@ export default function App() {
             className="box"
           >
             <View>
-              <Heading level="3">{userprofile.email}</Heading>
+              <Heading level={3}>{userprofile.email}</Heading>
             </View>
           </Flex>
         ))}
